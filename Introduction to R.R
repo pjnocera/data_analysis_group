@@ -68,7 +68,6 @@ rm(old.dir)
 
 
 ##SEQUENCE OF NUMBERS
-3
 1:20
 pi:10
 15:1
@@ -137,9 +136,8 @@ paste(LETTERS, 1:4, sep = "-")
 #SIMULATIONS
 #The sample() function draws randomly from a specified set of (scalar) objects allowing you to
 #sample from arbitrary distributions of numbers.
-set.seed(1)
+set.seed(51)
 ?sample
-sample(1:6, 4, replace=TRUE)
 sample(1:6, 4, replace=TRUE)
 sample(1:20, 10)
 LETTERS
@@ -147,12 +145,12 @@ sample(LETTERS) #Doesn't have to be numbers
 flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
 flips
 sum(flips)
-?rbinom
+?rbinom()
 rbinom(1, size = 100, prob = 0.7)
 flips2 <- rbinom(100, size = 1, prob = 0.7)
 flips2
 sum(flips2)
-?rnorm
+?rnorm()
 rnorm(10)
 rnorm(10, 100, 25)
 rpois(5, 10)
@@ -160,7 +158,7 @@ my_pois <- replicate(100, rpois(5, 10))
 my_pois
 cm <- colMeans(my_pois)
 hist(cm)
-
+rm(list = ls())
 
 #MISSING VALUES INTRO
 x <- c(44, NA, 5, NA)
